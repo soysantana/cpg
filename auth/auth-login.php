@@ -1,3 +1,8 @@
+<?php
+  ob_start();
+  require_once('../config/load.php');
+  if($session->isUserLoggedIn(true)) { redirect('../pages/pages-dashboards.php', false);}
+?>
 <?php include_once('../components/header.php');  ?>
 
 <div class="container-xxl">
@@ -6,6 +11,7 @@
       <!-- Register -->
       <div class="card">
         <div class="card-body">
+        <?php echo display_msg($msg); ?>
           <!-- Logo -->
           <div class="app-brand justify-content-center">
             <a href="index.php" class="app-brand-link gap-2">
@@ -18,7 +24,7 @@
           <h4 class="mb-2">Bienvenido a CPG! 👋</h4>
           <p class="mb-4">Por favor inicia sesión en tu cuenta</p>
 
-          <form id="formAuthentication" class="mb-3" action="../pages/pages-dashboards.php">
+          <form id="formAuthentication" class="mb-3" method="post" action="auth-users.php">
             <div class="mb-3">
               <label for="username" class="form-label">Nombre de usuario</label>
               <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese su nombre de usuario" autofocus />
