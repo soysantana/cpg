@@ -13,7 +13,7 @@
    <div class="menu-inner-shadow"></div>
    <ul class="menu-inner py-1">
       <!-- Dashboards -->
-      <li class="menu-item ">
+      <li class="dash menu-item ">
          <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Dashboards">Dashboards</div>
@@ -29,7 +29,7 @@
       <!-- Forms & Tables -->
       <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms</span></li>
       <!-- Forms -->
-      <li class="nbdyna menu-item">
+      <li class="client menu-item">
          <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bxs-user-account"></i>
             <div data-i18n="Clientes">Clientes</div>
@@ -135,34 +135,3 @@
    </ul>
 </aside>
 <!-- / Menu -->
-
-<script>
-   document.addEventListener("DOMContentLoaded", function() {
-    var currentUrl = new URL(window.location.href).pathname; // Obtener la URL actual sin el dominio
-
-    // Obtener todos los elementos de menú que tienen enlaces
-    var menuItems = document.querySelectorAll('.menu-item');
-
-    // Iterar sobre cada elemento de menú
-    menuItems.forEach(function(item) {
-        var itemUrl = item.querySelector('.menu-link').getAttribute('href'); // Obtener la URL del elemento de menú
-
-        // Verificar si la URL actual coincide con la URL del elemento de menú
-        if (currentUrl === itemUrl) {
-            // Si el elemento de menú tiene la clase 'nbdyna', agregar 'active open'
-            if (item.classList.contains('nbdyna')) {
-                item.classList.add('active', 'open');
-            } else {
-                item.classList.add('active');
-            }
-            
-            // Marcar como activos todos los elementos secundarios del menú
-            var subMenuItems = item.querySelectorAll('.menu-sub .menu-item');
-            subMenuItems.forEach(function(subItem) {
-                subItem.classList.add('active');
-            });
-        }
-    });
-});
-
-</script>
