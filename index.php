@@ -1,3 +1,4 @@
+<?php header("refresh:3; url=auth/auth-login.php"); ?>
 <?php include_once('components/header.php');  ?>
 
 <!-- Layout wrapper -->
@@ -30,13 +31,5 @@
   <div class="layout-overlay layout-menu-toggle"></div>
 </div>
 <!-- / Layout wrapper -->
-
-<script>
-window.onload = function() {
-  setTimeout(function() {
-    window.location.href = "auth/auth-login.php";
-  }, 3000);
-};
-</script>
 
 <?php include_once('components/footer-second.php');  ?>
