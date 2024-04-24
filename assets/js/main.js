@@ -116,3 +116,26 @@ let menu, animate;
   // Auto update menu collapsed/expanded based on the themeConfig
   window.Helpers.setCollapsed(true, false);
 })();
+
+window.onload = function () {
+  var currentUrl = window.location.href;
+  var targetUrls = ["/cpg/pages/pages-dashboards.php", "/cpg/pages/pages-add-client.php"];
+
+  targetUrls.forEach(function (url) {
+    if (currentUrl.includes(url)) {
+      if (url === "/cpg/pages/pages-dashboards.php") {
+        var dashElement = document.querySelector(".dash");
+        dashElement.classList.add("active", "open");
+
+        var dashMenuItemElement = document.querySelector(".dash .menu-sub .menu-item");
+        dashMenuItemElement.classList.add("active");
+      } else if (url === "/cpg/pages/pages-add-client.php") {
+        var clientElement = document.querySelector(".client");
+        clientElement.classList.add("active", "open");
+
+        var clientMenuItemElement = document.querySelector(".client .menu-sub .menu-item");
+        clientMenuItemElement.classList.add("active");
+      }
+    }
+  });
+};
